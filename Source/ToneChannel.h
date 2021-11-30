@@ -10,21 +10,27 @@
 
 #pragma once
 
-class TSTone{
+#include <JuceHeader.h>
+#include "DspChannel.h"
+
+class ToneChannel  : public DspChannel
+{
 public:
-    
-    float processSample(float x);
-    
-    void prepare(float newFs);
-    
-    void setKnobs(float toneKnob, float outputKnob);
-    
+    ToneChannel() = default;
+
+//==============================================================================
+    void setState (float tone, float output);
+
+//==============================================================================
+    void prepare (double sampleRate, int blockSize) override;
+    void reset() override;
+    void process (const float* inAudio, float* outAudio,
+                  int numSamplesToRender) override;
+
 private:
-    
-    void updateCoefficients();
-    
-    float Fs = 48000.f;
-    float Ts = 1.f/Fs;
-    
-    
+    SmoothedValue<float> mToneSmoothed;
+    SmoothedValue<float> mOutputSmoothed;
+
+//==============================================================================
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ToneChannel)
 };

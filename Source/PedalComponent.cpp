@@ -1,5 +1,6 @@
 #include "PedalComponent.h"
 
+/*
 void PedalKnobLookAndFeel::drawRotarySlider(
     Graphics &g,
     int x,
@@ -370,3 +371,4 @@ void PedalComponent::sliderValueChanged(Slider * slider){
         processor.outputValue = knobs[2].getValue();
     }
 }
+*/

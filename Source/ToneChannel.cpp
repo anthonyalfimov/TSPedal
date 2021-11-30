@@ -10,25 +10,27 @@
 
 #include "ToneChannel.h"
 
-float TSTone::processSample(float Vi){
-   
+void ToneChannel::setState (float tone, float output)
+{
+    mToneSmoothed.setTargetValue (tone);
+    mOutputSmoothed.setTargetValue (output);
 }
 
-void TSTone::prepare(float newFs){
-    
-    if (Fs != newFs){
-        Fs = newFs;
-        updateCoefficients();
-    }
-    
+//==============================================================================
+void ToneChannel::prepare (double sampleRate, int blockSize)
+{
+    DspChannel::prepare (sampleRate, blockSize);
+    reset();
 }
 
-void TSTone::setKnobs(float toneKnob, float outputKnob){
-    
+void ToneChannel::reset()
+{
+    // Reset smoothed parameters
+    mToneSmoothed.reset (mSampleRate, 0.05f);
+    mOutputSmoothed.reset (mSampleRate, 0.05f);
 }
 
-void TSTone::updateCoefficients(){
-    
-    Ts = 1.f/Fs;
-    
+void ToneChannel::process (const float* inAudio, float* outAudio, int numSamplesToRender)
+{
+    // Block processing
 }

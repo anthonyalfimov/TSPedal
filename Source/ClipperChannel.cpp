@@ -7,35 +7,30 @@
 
   ==============================================================================
 */
-#include <JuceHeader.h>
+
 #include "ClipperChannel.h"
 
-float TSClipper::processSample(float Vi){
-    
+void ClipperChannel::setState (float drive)
+{
+    mDriveSmoothed.setTargetValue (drive);
 }
 
-void TSClipper::prepare(float newFs){
-    
-    if (Fs != newFs){
-        Fs = newFs;
-        updateCoefficients();
-    }
-    
+//==============================================================================
+void ClipperChannel::prepare (double sampleRate, int blockSize)
+{
+    DspChannel::prepare (sampleRate, blockSize);
+    reset();
 }
 
-void TSClipper::setKnob(float newDrive){
-    
-    if (drivePot != newDrive){
-        drivePot = newDrive;
-        updateCoefficients();
-    }
+void ClipperChannel::reset()
+{
+    // Reset smoothed parameters
+    mDriveSmoothed.reset (mSampleRate, 0.05f);
 }
 
-void TSClipper::updateCoefficients(){
-    
-    Ts = 1.f/Fs;
-    
-    
+void ClipperChannel::process (const float* inAudio, float* outAudio, int numSamplesToRender)
+{
+    // Block processing
 }
 
 

@@ -9,6 +9,8 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "ClipperChannel.h"
+#include "ToneChannel.h"
 
 //==============================================================================
 /**
@@ -53,11 +55,13 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
-    float driveValue  = 0.f;
-    float toneValue   = 0.f;
-    float outputValue = 0.f;
-    bool  effectOn = true;
 private:
+    void initialiseDSP();
+    
+    // DSP Modules
+    OwnedArray<ClipperChannel> mClipper;
+    OwnedArray<ToneChannel> mTone;
+    
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TSPedalAudioProcessor)
 };

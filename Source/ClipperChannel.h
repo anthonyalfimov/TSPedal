@@ -10,20 +10,26 @@
 
 #pragma once
 
-class TSClipper{
-public:
+#include <JuceHeader.h>
+#include "DspChannel.h"
 
-    float processSample(float Vi);
-    
-    void prepare(float newFs);
-    
-    void setKnob(float newDrive);
-    
-    
-    
+class ClipperChannel  : public DspChannel
+{
+public:
+    ClipperChannel() = default;
+
+//==============================================================================
+    void setState (float drive);
+
+//==============================================================================
+    void prepare (double sampleRate, int blockSize) override;
+    void reset() override;
+    void process (const float* inAudio, float* outAudio,
+                  int numSamplesToRender) override;
+
 private:
-    
-    
-    
-    void updateCoefficients();
+    SmoothedValue<float> mDriveSmoothed;
+
+//==============================================================================
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ClipperChannel)
 };
