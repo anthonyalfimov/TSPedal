@@ -1,16 +1,14 @@
 /*
   ==============================================================================
 
-    TSTone.cpp
+    ToneChannel.cpp
     Created: 6 Feb 2021 1:59:16pm
     Author:  Hack Audio
 
   ==============================================================================
 */
 
-#include "TSTone.h"
-
-
+#include "ToneChannel.h"
 
 float TSTone::processSample(float Vi){
    

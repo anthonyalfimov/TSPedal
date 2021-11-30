@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="zVtaHY" name="TSPedal" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1" cppLanguageStandard="14">
+              addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1" cppLanguageStandard="17"
+              displaySplashScreen="1" version="0.1.0" pluginFormats="buildAU,buildVST3"
+              pluginVST3Category="Distortion,Fx">
   <MAINGROUP id="n2R6dq" name="TSPedal">
+    <GROUP id="{EA6C8555-50E1-1FC7-3235-0EE5915C5965}" name="Utilities"/>
+    <GROUP id="{762B0B3B-2715-B076-6A6D-50EBD2DD3FE2}" name="Components">
+      <FILE id="huiTaP" name="PedalComponent.cpp" compile="1" resource="0"
+            file="Source/PedalComponent.cpp"/>
+      <FILE id="vlIMoj" name="PedalComponent.h" compile="0" resource="0"
+            file="Source/PedalComponent.h"/>
+    </GROUP>
+    <GROUP id="{099F345E-A86A-6291-9DE9-0CF956C1F02F}" name="DSP">
+      <FILE id="YjUU1r" name="DspChannel.cpp" compile="1" resource="0" file="Source/DspChannel.cpp"/>
+      <FILE id="EsQUoj" name="DspChannel.h" compile="0" resource="0" file="Source/DspChannel.h"/>
+      <FILE id="aBSL4d" name="ClipperChannel.cpp" compile="1" resource="0"
+            file="Source/ClipperChannel.cpp"/>
+      <FILE id="xTs9n9" name="ClipperChannel.h" compile="0" resource="0"
+            file="Source/ClipperChannel.h"/>
+      <FILE id="z8shi0" name="ToneChannel.cpp" compile="1" resource="0" file="Source/ToneChannel.cpp"/>
+      <FILE id="fCqYfz" name="ToneChannel.h" compile="0" resource="0" file="Source/ToneChannel.h"/>
+    </GROUP>
     <GROUP id="{7DD324C5-240B-C3C1-38D5-5F1426B87186}" name="Source">
       <FILE id="fgWX4H" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -11,14 +30,6 @@
       <FILE id="IUYWOm" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="iaiVWD" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
-      <FILE id="huiTaP" name="PedalComponent.cpp" compile="1" resource="0"
-            file="Source/PedalComponent.cpp"/>
-      <FILE id="vlIMoj" name="PedalComponent.h" compile="0" resource="0"
-            file="Source/PedalComponent.h"/>
-      <FILE id="aBSL4d" name="TSClipper.cpp" compile="1" resource="0" file="Source/TSClipper.cpp"/>
-      <FILE id="xTs9n9" name="TSClipper.h" compile="0" resource="0" file="Source/TSClipper.h"/>
-      <FILE id="z8shi0" name="TSTone.cpp" compile="1" resource="0" file="Source/TSTone.cpp"/>
-      <FILE id="fCqYfz" name="TSTone.h" compile="0" resource="0" file="Source/TSTone.h"/>
     </GROUP>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>

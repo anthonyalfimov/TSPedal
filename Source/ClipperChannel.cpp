@@ -1,14 +1,14 @@
 /*
   ==============================================================================
 
-    TSClipper.cpp
+    ClipperChannel.cpp
     Created: 6 Feb 2021 2:26:49pm
     Author:  Hack Audio
 
   ==============================================================================
 */
 #include <JuceHeader.h>
-#include "TSClipper.h"
+#include "ClipperChannel.h"
 
 float TSClipper::processSample(float Vi){
     

@@ -1,8 +1,8 @@
 /*
   ==============================================================================
 
-    TSTone.h
-    Created: 6 Feb 2021 1:59:16pm
+    ClipperChannel.h
+    Created: 6 Feb 2021 2:26:49pm
     Author:  Hack Audio
 
   ==============================================================================
@@ -10,22 +10,20 @@
 
 #pragma once
 
-
-class TSTone{
+class TSClipper{
 public:
-    
-    float processSample(float x);
+
+    float processSample(float Vi);
     
     void prepare(float newFs);
     
-    void setKnobs(float toneKnob, float outputKnob);
+    void setKnob(float newDrive);
+    
+    
     
 private:
     
+    
+    
     void updateCoefficients();
-    
-    float Fs = 48000.f;
-    float Ts = 1.f/Fs;
-    
-    
 };
