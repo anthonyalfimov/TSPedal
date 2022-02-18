@@ -9,8 +9,8 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "ClipperChannel.h"
-#include "ToneChannel.h"
+#include "DSP/ClipperChannel.h"
+#include "DSP/ToneChannel.h"
 
 //==============================================================================
 /**
