@@ -1,6 +1,6 @@
 # TS Pedal
 
-![Build](https://img.shields.io/github/workflow/status/anthonyalfimov/TSPedal/Validation/main?logo=github)
+[![Build](https://img.shields.io/github/workflow/status/anthonyalfimov/TSPedal/Validation/main?logo=github)](https://github.com/anthonyalfimov/TSPedal/actions)
 
 My fork of Dr. Eric Tarr's repository for the Audio Developers Conference (ADC) 2021 workshop, November 19, 2021
 and the University of West London (UWL) Audio Circuit Modeling Workshop, February 6-7, 2021.
